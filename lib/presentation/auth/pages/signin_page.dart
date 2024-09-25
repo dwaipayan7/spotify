@@ -5,8 +5,7 @@ import 'package:spotify/data/models/auth/signin_user_req.dart';
 import 'package:spotify/domain/usecases/auth/signin.dart';
 import 'package:spotify/domain/usecases/auth/signup.dart';
 import 'package:spotify/presentation/auth/pages/signup.dart';
-import 'package:spotify/presentation/root/pages/root.dart';
-
+import 'package:spotify/presentation/home/pages/home.dart';
 import '../../../common/widgets/appbar/app_bar.dart';
 import '../../../common/widgets/button/basic_app_button.dart';
 import '../../../core/configs/assets/app_vectors.dart';
@@ -58,7 +57,7 @@ class SigninPage extends StatelessWidget {
                               ScaffoldMessenger.of(context).showSnackBar(snackbar);
                             },
                             (r){
-                              Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => RootPage()), (route) => false);
+                              Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => HomePage()), (route) => false);
                             }
                     );
                   },
