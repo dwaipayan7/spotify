@@ -35,9 +35,7 @@ Future<void> initializeDependencies() async{
       SongFirebaseServiceImpl()
   );
 
-  sl.registerSingleton<SongsRepository>(
-      SongRepositoryImpl()
-  );
+  sl.registerLazySingleton<SongsRepository>(() => SongRepositoryImpl());
 
   sl.registerSingleton<GetNewSongsUseCase>(
       GetNewSongsUseCase()

@@ -5,6 +5,7 @@ import 'package:spotify/common/widgets/appbar/app_bar.dart';
 import 'package:spotify/core/configs/assets/app_images.dart';
 import 'package:spotify/core/configs/assets/app_vectors.dart';
 import 'package:spotify/core/configs/theme/app_colors.dart';
+import 'package:spotify/presentation/home/widgets/news_songs.dart';
 
 class HomePage extends StatefulWidget {
    HomePage({super.key});
@@ -42,7 +43,20 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             _homeTopCard(),
-            _tabs(context)
+            _tabs(context),
+            SizedBox(
+              height: 260,
+              child:    TabBarView(
+                children: [
+                  NewsSongs(),
+                  Container(),
+                  Container(),
+                  Container()
+                ],
+                controller: _tabController,
+              ),
+            )
+
           ],
         ),
       ),

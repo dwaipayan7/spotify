@@ -1,6 +1,13 @@
 part of 'news_songs_cubit.dart';
 
-@immutable
-sealed class NewsSongsState {}
+abstract class NewsSongsState {}
 
-final class NewsSongsInitial extends NewsSongsState {}
+class NewsSongsLoading extends NewsSongsState{}
+
+class NewsSongLoaded extends NewsSongsState{
+  final List<SongEntity> songs;
+
+  NewsSongLoaded({required this.songs});
+}
+
+class NewsSongsLoadFailure extends NewsSongsState{}
