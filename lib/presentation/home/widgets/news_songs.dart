@@ -18,11 +18,11 @@ class NewsSongs extends StatelessWidget {
             // // Line 1: Loading state with proper alignment
 
 
-            // if (state is NewsSongsLoading) {
-            //   return const Center(
-            //     child: CircularProgressIndicator(),
-            //   );
-            // }
+            if (state is NewsSongsLoading) {
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
+            }
 
             // Line 2: Loaded state
             if (state is NewsSongLoaded) {
